@@ -1,0 +1,4 @@
+dataset_name: arthropod-taxonomy-orders-object-detection-dataset
+username: mistag
+
+CLI: kaggle datasets download mistag/arthropod-taxonomy-orders-object-detection-dataset

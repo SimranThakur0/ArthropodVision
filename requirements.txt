@@ -1,0 +1,8 @@
+os
+Flask
+torch
+pillow
+numpy
+Python-IO
+opencv-python
+ultralytics

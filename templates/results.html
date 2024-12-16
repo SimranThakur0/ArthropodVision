@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .results-container {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .annotated-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1>Prediction Results</h1>
+        
+        {% if annotated_image %}
+        <img src="data:image/jpeg;base64,{{ annotated_image }}" alt="Annotated Image" class="annotated-image">
+        {% endif %}
+        
+        {% if predictions %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Class ID</th>
+                    <th>Confidence</th>
+                    <th>Bounding Box</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pred in predictions %}
+                <tr>
+                    <td>{{ pred.class_id }}</td>
+                    <td>{{ "%.2f"|format(pred.confidence) }}</td>
+                    <td>
+                        x_min: {{ "%.2f"|format(pred.x_min) }}, 
+                        y_min: {{ "%.2f"|format(pred.y_min) }}, 
+                        x_max: {{ "%.2f"|format(pred.x_max) }}, 
+                        y_max: {{ "%.2f"|format(pred.y_max) }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No objects detected.</p>
+        {% endif %}
+
+        {% if raw_results %}
+        <div style="margin-top: 20px; background-color: #f0f0f0; padding: 10px; word-wrap: break-word;">
+            <h3>Raw Results</h3>
+            <pre>{{ raw_results }}</pre>
+        </div>
+        {% endif %}
+        
+        <a href="/" class="back-link">Upload Another Image</a>
+    </div>
+</body>
+</html>
