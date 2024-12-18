@@ -1,4 +1,3 @@
-os
 Flask
 torch
 pillow
