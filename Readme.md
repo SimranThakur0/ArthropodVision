@@ -46,7 +46,6 @@ Testing of annotations was performed to ensure accuracy and consistency.
 ## Model Training
 The model was trained using **YOLOv8** on an **NVIDIA Tesla T4 GPU** for efficient performance.
 
-![Model Training](screenshots/training.jpeg)
 
 ---
 
