@@ -39,7 +39,7 @@ I have annotated the data using JSON files to provide precise boundary boxes for
 ### Annotation Testing
 Testing of annotations was performed to ensure accuracy and consistency.
 
-![Annotation Testing](screenshots/test.jpeg)
+![Annotation Testing](screenshots/op3.jpeg)
 
 ---
 
@@ -55,12 +55,12 @@ For prediction and testing, **Flask** was used to deploy and test the trained mo
 ### Prediction - Step 1
 Initial prediction result:
 
-![Prediction Step 1](screenshots/pre1.jpeg)
+![Prediction Step 1](screenshots/op2.jpeg)
 
 ### Prediction - Final Result
 Final refined prediction result:
 
-![Prediction Final Result](screenshots/pre2.jpeg)
+![Prediction Final Result](screenshots/op4.jpeg)
 
 ---
 
