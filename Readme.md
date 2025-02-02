@@ -1,6 +1,6 @@
 # Arthropod Taxonomy Orders Dataset
 
-## About the Dataset
+## About the Dataset 
 
 ### Dataset Overview
 Species identification from an image is a complex problem. Image classification assumes there is only one species in the image. However, the goal is to identify **all** species present in an image. Thankfully, biologists and taxonomists have systematically classified and ordered organisms in a taxonomic hierarchy.
